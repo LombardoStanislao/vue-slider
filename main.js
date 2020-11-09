@@ -36,12 +36,9 @@ var app = new Vue({
 
       if (this.indexImages < 0) {
 
-// Non ho capito bene perchè devo metter il - 1;
-
         this.indexImages = this.images.length - 1;
 
       }
-
 
     }
 
