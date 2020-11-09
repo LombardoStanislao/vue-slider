@@ -49,10 +49,17 @@ img {
   object-fit: cover;
 }
 
-.fa-circle {
+.circles {
   position: absolute;
   bottom: 10px;
   right: 50%;
-  transform: translateX(-50%);
+  
+
+}
+
+.fa-circle {
   color: white;
+  padding: 0 5px;
+
+
 }
