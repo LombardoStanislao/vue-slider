@@ -22,6 +22,30 @@ var app = new Vue({
 
   methods: {
 
+    nextImages() {
+      this.indexImages += 1;
+
+      if (this.indexImages == this.images.length) {
+        this.indexImages = 0;
+      }
+    },
+
+    prevImages() {
+
+      this.indexImages -= 1;
+
+      if (this.indexImages < 0) {
+
+// Non ho capito bene perchè devo metter il - 1;
+
+        this.indexImages = this.images.length - 1;
+
+      }
+
+
+    }
+
+
 
   },
 
