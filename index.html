@@ -3,13 +3,36 @@
   <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://kit.fontawesome.com/7b09a46f67.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
   <body>
 
     <div id="root">
-      
+
+      <div class="container">
+
+        <h1>Questo è il mio primo slider con Vue!</h1>
+
+        <div class="slider">
+
+          <div class="prev">
+            <i class="fas fa-2x fa-arrow-left"></i>
+          </div>
+
+          <div class="images">
+            <img :src="images[indexImages]" alt="">
+          </div>
+
+          <div class="next">
+            <i class="fas fa-2x fa-arrow-right"></i>
+          </div>
+
+        </div>
+      </div>
+
+
     </div>
 
 
