@@ -22,12 +22,27 @@ var app = new Vue({
 
   methods: {
 
+    autoplay: function() {
+
+      setInterval(() => {
+
+        this.indexImages += 1;
+
+          if (this.indexImages == this.images.length) {
+            this.indexImages = 0;
+           }
+
+      }, 2000)
+    },
+
     nextImages() {
+
       this.indexImages += 1;
 
-      if (this.indexImages == this.images.length) {
-        this.indexImages = 0;
-      }
+        if (this.indexImages == this.images.length) {
+          this.indexImages = 0;
+         }
+
     },
 
     prevImages() {
@@ -40,11 +55,27 @@ var app = new Vue({
 
       }
 
-    }
+    },
+
+
+// Si possono creare così le funzioni?
+
+    // function changeNextImg() => {
+    //   this.indexImages += 1;
+    //
+    //   if (this.indexImages == this.images.length) {
+    //     this.indexImages = 0;
+    //   }
+    // }
 
 
 
-  },
+
+  }, // Fine methods
+
+  created:function() {
+    this.autoplay();
+  }
 
 
 
