@@ -21,16 +21,16 @@
             <i @click="prevImages" class="fas fa-2x fa-arrow-left"></i>
           </div>
 
-          <div class="images">
+          <div class="images" @mouseenter="stopAutoplay" @mouseleave="autoplay">
 
             <img :src="images[indexImages]" alt="">
 
             <div class="circles">
 
-<!-- Non funziona il click così? idem mouseenter -->
 
-              <i @click="indexCircle = indexImages" v-for="(circle, indexCircle) in images" class=" fa-circle" :class="indexCircle == indexImages ? 'fas' : 'far' "
-              @mouseenter="stopAutoplay">
+
+              <i @click="bulletClick(indexCircle)" v-for="(circle, indexCircle) in images" class=" fa-circle" :class="indexCircle == indexImages ? 'fas' : 'far' "
+              >
               </i>
             </div>
 

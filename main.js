@@ -16,65 +16,69 @@ var app = new Vue({
       "https://hbr.org/resources/images/article_assets/2016/01/04-Cities-Looking-to-Harness-Smart-Technologies-Should-Start-Small_960px-x-540px.jpg",
       "https://assets.unenvironment.org/2020-02/sustainable-cities.jpg",
       "https://graylinegroup.com/wp-content/uploads/2016/03/city-1209105_1280-1.jpg"
-    ]
+    ],
+
+    playInfinite: null,
 
   },
 
   methods: {
 
-    autoplay: function() {
+        autoplay() {
 
-      setInterval(() => {
+          this.playInfinite = setInterval(() => {
 
-        this.indexImages += 1;
+            this.indexImages += 1;
 
-          if (this.indexImages == this.images.length) {
-            this.indexImages = 0;
-           }
+              if (this.indexImages == this.images.length) {
+                this.indexImages = 0;
+               }
 
-      }, 2000)
-    },
+          }, 2000);
+        },
 
-    nextImages() {
+        nextImages() {
 
-      this.indexImages += 1;
+          this.indexImages += 1;
 
-        if (this.indexImages == this.images.length) {
-          this.indexImages = 0;
-         }
-
-    },
-
-    prevImages() {
-
-      this.indexImages -= 1;
-
-      if (this.indexImages < 0) {
-
-        this.indexImages = this.images.length - 1;
-
-    },
-
-    stopAutoplay() {
-        clearInterval(autoplay);
-    }
-
-
-// Errore di sintassi che non riesco  a capire
-
-    // bulletClick() {
-    //
-    //     this.indexImages = indexCircle;
-    // }
+            if (this.indexImages == this.images.length) {
+              this.indexImages = 0;
+             }
 
 
 
-    },
+        },
+
+        prevImages() {
+
+          this.indexImages -= 1;
+
+          if (this.indexImages < 0) {
+
+            this.indexImages = this.images.length - 1;
+
+            }
+        },
 
 
-// Si possono creare così le funzioni?
+        stopAutoplay() {
+            clearInterval(this.playInfinite);
+        },
 
-    // function changeNextImg() => {
+
+        bulletClick(bulletIndex) {
+
+            this.indexImages = bulletIndex;
+        },
+
+
+
+
+
+
+// Si possono creare così le funzioni? con arrow function problemi con this
+
+    // changeNextImg:() => {
     //   this.indexImages += 1;
     //
     //   if (this.indexImages == this.images.length) {
@@ -85,10 +89,12 @@ var app = new Vue({
 
 
 
-  }, // Fine methods
+    }, // Fine methods
 
-  created:function() {
+  created() {
+
     this.autoplay();
+
   }
 
 
