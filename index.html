@@ -27,7 +27,11 @@
 
             <div class="circles">
 
-              <i v-for="(circle, indexCircle) in images" class=" fa-circle" :class="indexCircle == indexImages ? 'fas' : 'far' "></i>
+<!-- Non funziona il click così? idem mouseenter -->
+
+              <i @click="indexCircle = indexImages" v-for="(circle, indexCircle) in images" class=" fa-circle" :class="indexCircle == indexImages ? 'fas' : 'far' "
+              @mouseenter="stopAutoplay">
+              </i>
             </div>
 
           </div>

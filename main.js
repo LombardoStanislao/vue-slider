@@ -53,7 +53,21 @@ var app = new Vue({
 
         this.indexImages = this.images.length - 1;
 
-      }
+    },
+
+    stopAutoplay() {
+        clearInterval(autoplay);
+    }
+
+
+// Errore di sintassi che non riesco  a capire
+
+    // bulletClick() {
+    //
+    //     this.indexImages = indexCircle;
+    // }
+
+
 
     },
 
